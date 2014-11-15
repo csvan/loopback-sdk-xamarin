@@ -48,6 +48,9 @@ namespace LoopBack.Sdk.Xamarin.Remooting.Adapters
         public RestAdapter(IContext context, string url)
 			: base(url)
         {
+			if(context == null) {
+				_Context = new RestContext ("loopback-xamarin/1.0");
+			}
 			_Context = context;
             Contract = new RestContract();
         }
